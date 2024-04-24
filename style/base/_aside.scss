@@ -1,0 +1,30 @@
+/*ASIDE*/
+aside {
+    width: 20%;
+    margin-top: 40px;
+    padding: 0.5%;
+    border-radius: 20px;
+
+    box-shadow: 0px 0px 20px $violet;
+}
+
+.aside__titre {
+    font-weight: bold;
+    font-size: 1.3rem;
+    margin: 0.5rem;
+}
+
+.list-aside__item {
+    margin: 1rem 0;
+    padding: 1rem;
+    border-radius: 10px;
+
+    background: $bleu;
+    color: white;
+    font-weight: bold;
+}
+
+.list-aside__item:hover {
+    background: linear-gradient(75deg, $bleu 10%, $violet 50%);
+}
+

@@ -1,0 +1,70 @@
+/*FORMULAIRE*/
+.formulaire {
+    background: #131E2F; 
+    //box-shadow: 0px 0px 20px $violet;
+
+    padding: 1rem 1.5rem;
+    border-radius: 20px;
+}
+
+.formulaire__titre {
+    text-align: center;
+    padding: 1rem 0;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 0.3rem;
+    font-size: 1.1rem;
+}
+
+input, select {
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+}
+
+.case_form {
+    margin: 2rem 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.double_select {
+    display: flex;
+    justify-content: space-around;
+}
+
+#date_a {
+    width: 15%;
+    text-align: center;
+}
+
+#photo_a {
+    width: 25%;
+}
+
+.titre_associer {
+    text-align: center;
+    margin: 1rem 0;
+}
+
+.zone_btn-valider{
+    margin: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+
+//Liste btn modifier (associer/delete associer)
+.deux_liste_col {
+    display: flex;
+    margin-top: 3rem;
+}
+
+.liste_col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+}
+

@@ -1,0 +1,47 @@
+{% extends "deuxcolonnes.twig" %}
+
+
+{% block aside %}
+<p class="aside__titre">D'autres lieux :</p>
+<ul>
+    {% for tab in plusieurs_lieu %}
+    <a href="index.php?page=lieu&action=read&id={{tab.id_lieu}}">
+        <li class="list-aside__item">{{ tab.nom_lieu }}</li>
+    </a>
+    {% endfor %}
+</ul>
+{% endblock %}
+
+
+{% block zone %}
+<input style="margin: 1rem;" id="searchbar" onkeyup="barre_recherche()" type="text" name="search" placeholder="Recherche" hidden>
+
+<div class="generale-zone">
+    <h2 class="generale-zone__titre">{{ un_lieu.nom_lieu }}</h2>
+    <div class="generale-zone-info">
+        <img class="generale-zone-info__img" src="{{un_lieu.photo_lieu}}" alt="">
+        <div class="generale-zone-info__liste">
+            <p><b>Continent :</b> {{ un_lieu.continent_lieu }}</p>
+            <p><b>Capitale :</b> {{ un_lieu.capitale_lieu }}</p>
+            <p><b>Superficie :</b> {{ un_lieu.superficie_lieu }}</p>
+            <p><b>Population :</b> {{ un_lieu.population_lieu }} (en 2020)</p>
+        </div>
+    </div>
+    <h2 class="titre-liste-article">Articles dans ce lieu :</h2>
+    <div class="liste-article">
+        {% for tab in un_lieu.liste_articles_for_lieu %}
+        <div class="liste-article-bloc--proposition">
+            <a href="index.php?page=article&action=read&id={{tab.id_article}}">
+                <div class="liste-article-bloc__img">
+                    <img class="liste-article-bloc__img" src="{{tab.image_article}}" alt="">
+                </div>
+                <div class="liste-article-bloc__infos">
+                    <h4 class="liste-article-bloc__titre">{{ tab.titre_article}}</h4>
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

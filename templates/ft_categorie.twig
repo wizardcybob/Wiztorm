@@ -1,0 +1,42 @@
+{% extends "deuxcolonnes.twig" %}
+
+
+{% block aside %}
+<p class="aside__titre">D'autres catégories :</p>
+<ul>
+    {% for tab in plusieurs_cat %}
+    <a href="index.php?page=categorie&action=read&id={{tab.id_categorie}}">
+        <li class="list-aside__item">{{ tab.nom_categorie }}</li>
+    </a>
+    {% endfor %}
+</ul>
+{% endblock %}
+
+
+{% block zone %}
+<input style="margin: 1rem;" id="searchbar" onkeyup="barre_recherche()" type="text" name="search" placeholder="Recherche" hidden>
+
+<div class="generale-zone">
+    <h2 class="generale-zone__titre">{{ un_cat.nom_categorie }}</h2>
+    <div class="generale-zone-info">
+        <img class="generale-zone-info__img" src="{{un_cat.photo_categorie}}" alt="">
+        <p  class="generale-zone-info__texte">{{un_cat.description_categorie}}</p>
+    </div>
+    <h2 class="titre-liste-article">Articles dans cette catégorie :</h2>
+    <div class="liste-article">
+        {% for tab in un_cat.liste_articles_for_cat %}
+        <div class="liste-article-bloc--proposition">
+            <a href="index.php?page=article&action=read&id={{tab.id_article}}">
+                <div class="liste-article-bloc__img">
+                    <img class="liste-article-bloc__img" src="{{tab.image_article}}" alt="">
+                </div>
+                <div class="liste-article-bloc__infos">
+                    <h4 class="liste-article-bloc__titre">{{ tab.titre_article}}</h4>
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

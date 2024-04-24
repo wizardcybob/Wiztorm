@@ -1,0 +1,10 @@
+/*GENERAL*/
+body {
+  background-color: rgb(177, 176, 245);
+  color: #5B4EFF;
+}
+
+nav, footer {
+  background-color: #224ca1;
+  color: white;
+}

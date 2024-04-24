@@ -1,0 +1,77 @@
+/*PRESENTATION BLOCS DE LISTE ARTICLE*/
+.liste-article {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    margin: 3rem 0;
+}
+
+.liste-article-bloc {
+    width: 30%;
+    margin-bottom: 1.25rem;
+    border-radius: 20px;
+    overflow: hidden;
+
+    display: block;
+    text-align: center;
+}
+
+.liste-article-bloc__img {
+    height: 20rem;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.liste-article-bloc__img--image {
+    height: 20rem;
+    width: 100%;
+}
+
+.liste-article-bloc__infos {
+    //padding: 2rem 0;
+    height: 0;
+}
+
+.liste-article-bloc__titre {
+    font-size: 1.3rem;
+    transform: translateY(-4rem);
+    padding: 0.7rem 0;
+    background-color: #36096d;
+    transition: padding 0.5s;
+}
+
+.liste-article-bloc:hover {
+    box-shadow: 3px 3px 5px $violet;
+}
+
+.liste-article-bloc:hover .liste-article-bloc__titre {
+    background-image: linear-gradient(75deg, #36096d 0%, #377cd6 74%);
+    padding: 1.25rem 0;
+}
+
+//version "proposition"
+.liste-article-bloc--proposition { //pour les parties catégories et lieux
+    width: 45%;
+    margin-bottom: 1.25rem;
+    border-radius: 10px;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.liste-article-bloc--proposition:hover {
+    box-shadow: 3px 3px 5px $violet;
+}
+
+.liste-article-bloc--proposition:hover .liste-article-bloc__titre {
+    background-image: linear-gradient(75deg, #36096d 0%, #377cd6 74%);
+    padding: 1.25rem 0;
+}
+

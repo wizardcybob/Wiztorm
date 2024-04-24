@@ -1,0 +1,34 @@
+//BOUTON
+button, .bouton {
+    margin: 1rem 0;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+
+    background: $violet;
+    color: white;
+    box-shadow: 1px 1px 5px $violet;
+
+    font-weight: bold;
+    cursor: pointer;
+
+    &--valider {
+        background: $lightgreen;
+    }
+
+    &--delete {
+        background: $red;
+    }
+}
+
+button:hover, .bouton:hover {
+    background: linear-gradient(75deg, $violet 10%, $bleu 65%);
+}
+
+.bouton--valider:hover {
+    background: linear-gradient(75deg, $lightgreen 10%, $green 65%);
+}
+
+.bouton--delete:hover {
+    background: linear-gradient(75deg, $red 10%, $darkred 65%);
+}
+

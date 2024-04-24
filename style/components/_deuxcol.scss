@@ -1,0 +1,46 @@
+/*DEUX COLONNES*/
+.generale-zone {
+    background: #131E2F; 
+    box-shadow: 0px 0px 20px $violet;
+
+    padding: 1rem 1.5rem;
+    border-radius: 20px;
+}
+
+.generale-zone__titre {
+    text-align: center;
+    padding: 1rem;
+    font-size: 2rem;
+}
+
+.generale-zone-info {
+    margin-top: 1rem;
+    
+    display: flex;
+    justify-content: space-between;
+}
+
+.generale-zone-info__texte {
+    width: 60%;
+}
+
+.generale-zone-info__img {
+    width: 22rem;
+}
+
+.generale-zone-info__texte {
+    margin-left: 1.5rem;
+}
+
+.generale-zone-info__liste {
+    width: 50%;
+    height: 10rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    //background-color: darkblue;
+    box-shadow: 0px 0px 20px $violet;
+    padding: 1rem;
+    border-radius: 20px;
+}

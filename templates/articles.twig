@@ -1,0 +1,39 @@
+{% extends "base.twig" %}
+
+{% block main %}
+
+<div class="sous-menu"></div>
+<div class="sous-menu--nombre_article">
+    <div>
+        <p style="display: inline; margin-right:6px;">Filtrer par nombre :</p>
+        <button class="un_art">1</button>
+        <button class="cinq_art">5</button>
+        <button class="sept_art">7</button>
+        <button class="all_art">Tous les articles</button>
+    </div>
+    <input style="margin: 1rem;" id="searchbar" onkeyup="barre_recherche()" type="text" name="search" placeholder="Recherche">
+</div>
+
+<div class="liste-article-tri"></div>
+<div class="liste-article">
+    {% for tab in plusieurs_article %}
+    <div class="liste-article-bloc">
+        <a href="index.php?page=article&action=read&id={{tab.id_article}}">
+            <div class="liste-article-bloc__img">
+                <img class="liste-article-bloc__img--image" src="{{tab.image_article}}" alt="">
+            </div>
+            <div class="liste-article-bloc__infos">
+                {% if tab.type_pheno_article == "2" %}
+                <h4 data-typepheno="Phénomène terrestre" class="liste-article-bloc__titre">{{ tab.titre_article }}</h4>
+                {% endif %}
+                {% if tab.type_pheno_article == "1" %}
+                <h4 data-typepheno="Phénomène atmosphérique" class="liste-article-bloc__titre">{{ tab.titre_article }}</h4>
+                {% endif %}
+            </div>
+        </a>
+    </div>
+    {% endfor %}
+</div>
+
+
+{% endblock %}

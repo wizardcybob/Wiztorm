@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wiztorm</title>
+    <link rel="icon" type="image/png" href="images/favicon.ico">
+    <link rel="stylesheet" href="./style/index.css" type="text/css"> <!--besoin de le laisser car c'est le style général-->
+    <link id="linkvide" rel="stylesheet" href="" type="text/css"> <!--sert pour le bouton mode claire/sombre-->
+</head>
+
+<body>
+    <nav>
+        <div class="logo">
+            <a href="index.php?page=article&action=read">
+                <img class="logo-img" src="images/wiztorm.png" alt="">
+            </a>
+        </div>
+        <ul class="menu">
+            <a class="menu__item" href="index.php?page=article&action=read">
+                <li>Articles</li>
+            </a>
+            <a class="menu__item" href="index.php?page=categorie&action=read">
+                <li>Catégories</li>
+            </a>
+            <a class="menu__item" href="index.php?page=lieu&action=read">
+                <li>Lieux</li>
+            </a>
+            <a class="menu__item" href="index.php?page=formulaire&action=read">
+                <li>Formulaire</li>
+            </a>
+        </ul>
+    </nav>
+    {# <div class="sous-menu"></div> #}
+    <main class="wrapper">
+        {% block main %}
+        <section>
+        </section>
+        {% endblock %}
+    </main>
+    <footer>
+        <p class="quote">Projet MMI dans le but de prendre en main : Twig - SQL - JAVASCRIPT - SCSS</p>
+        <p>Made by <b><a href="https://www.instagram.com/wizardcybob/" target="_blank">Wizardcybob</a></b></p>
+    </footer>
+
+    <script type="text/javascript" src="js/main.js"></script>
+</body>
+
+</html>

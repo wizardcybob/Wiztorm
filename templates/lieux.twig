@@ -1,0 +1,18 @@
+{% extends "base.twig" %}
+
+{% block main %}
+<input style="margin: 1rem;" id="searchbar" onkeyup="barre_recherche()" type="text" name="search" placeholder="Recherche" hidden>
+
+<div class="bloc_general">
+    {% for tab in plusieurs_lieu %}
+    <div class="bloc_general_unique">
+        <a href="index.php?page=lieu&action=read&id={{tab.id_lieu}}">
+        <img class="bloc_general_unique__img" src="{{ tab.photo_lieu }}" alt="">
+        <h4 class="bloc_general_unique__titre">{{ tab.nom_lieu }}</h4>
+        </a>
+    </div>
+    {% endfor %}
+</div>
+
+
+{% endblock %}

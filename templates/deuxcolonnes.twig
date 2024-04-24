@@ -1,0 +1,16 @@
+{% extends "base.twig" %}
+
+{% block main %}
+<div class="deuxcolonnes">
+    <aside>
+        {% block aside %}
+        {% endblock aside %}
+    </aside>
+
+    <div class="bloc_central">
+        {% block zone %}
+        {% endblock zone %}
+    </div>
+</div>
+
+{% endblock %}

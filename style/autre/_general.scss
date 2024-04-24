@@ -1,0 +1,32 @@
+/*GENERAL*/
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: $bg_bleu;
+    color: white;
+}
+
+.wrapper {
+    width: 80%;
+    margin: 3rem auto;
+}
+
+.deuxcolonnes {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+
+.bloc_central {
+    padding: 2.5rem 0;
+    width: 77%;
+}
+
+a {
+    color: white;
+}
+
+.quote {
+    font-size: 0.85rem;
+    margin-top: 0.7rem;
+    font-style: italic;
+}

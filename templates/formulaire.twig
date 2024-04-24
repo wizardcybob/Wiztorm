@@ -1,0 +1,56 @@
+{% extends "base.twig" %}
+
+{% block main %}
+
+<input style="margin: 1rem;" id="searchbar" onkeyup="barre_recherche()" type="text" name="search" placeholder="Recherche" hidden>
+
+<div class="formulaire">
+    <h2 class="formulaire__titre">Créer un article :</h2>
+
+    <form action="index.php?page=article&action=create" enctype="multipart/form-data" method="POST">
+        {# <input type="text" name="id" hidden> #}
+        <div class="case_form">
+            <label for="titre_a">Titre de l'article :</label>
+            <input id="titre_a" type="text" name="titre" placeholder="Titre de l'article" required>
+        </div>
+        <div class="case_form">
+            <label for="texte_a">Texte de l'article :</label>
+            <input id="texte_a" type="text" name="texte" placeholder="Texte de l'article" required>
+            {# <textarea id="texte_a" rows="5" cols="33" name="texte" placeholder="Texte de l'article" required></textarea> #}
+        </div>
+        <div class="case_form">
+            <label for="date_a">Ajouter une date en rapport à votre article :</label>
+            <input id="date_a" type="date" name="date" placeholder="Date de l'évènement">
+        </div>
+        <div class="case_form">
+            <label for="photo_a">Ajouter une photo à votre article :</label>
+            <input id="photo_a" type="file" name="photo" required>
+        </div>
+        <hr>
+        <h3 class="titre_associer">Associer l'article à une catégorie et à un lieu :</h3>
+        <div class="double_select">
+            <select name="categorie">
+                <option value="">-- Choisir une catégorie --</option>
+                {% for tab in plusieurs_cat %}
+                    <option value={{ tab.id_categorie }}>{{ tab.nom_categorie }}</option>
+                {% endfor %}
+            </select>
+            <select name="lieu">
+                <option value="">-- Choisir un lieu --</option>
+                {% for bat in plusieurs_lieu %}
+                    <option value={{ bat.id_lieu }}>{{ bat.nom_lieu }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <p class="quote">*pour associer l'article à d'autres catégories et lieux, ou les supprimer, il faut le modifier après sa publication*</p>      
+
+        <div class="zone_btn-valider">
+            <input class="bouton bouton--valider" type="submit" name="new_article" value="Valider la création">          
+        </div>
+    </form>
+</div>
+
+
+{% endblock %}
+
+{# si form ne fonctionne pas voir si valeur null est coché dans la bdd #}

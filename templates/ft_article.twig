@@ -1,0 +1,74 @@
+{% extends "deuxcolonnes.twig" %}
+
+
+{% block aside %}
+<p class="aside__titre">Liste des autres articles :</p>
+<ul>
+    {% for tab in plusieurs_article %}
+    <a href="index.php?page=article&action=read&id={{tab.id_article}}">
+        <li class="list-aside__item">{{ tab.titre_article }}</li>
+    </a>
+    {% endfor %}
+</ul>
+{% endblock %}
+
+
+
+{% block zone %}
+<input style="margin: 1rem;" id="searchbar" onkeyup="barre_recherche()" type="text" name="search" placeholder="Recherche" hidden>
+
+<div class="article">
+    <h2 class="article__titre">{{ un_article.titre_article }}</h2>
+
+        <div class="article__btns">
+            <div>
+                {% for categorie in un_article.liste_categories %}
+                <a href="index.php?page=categorie&action=read&id={{categorie.id_categorie}}">
+                    <button class="nom_cat">{{ categorie.nom_categorie }}</button>
+                </a>
+                {% endfor %}
+            </div>
+            <div>
+                {% for lieu in un_article.liste_lieux %}
+                <a href="index.php?page=lieu&action=read&id={{lieu.id_lieu}}">
+                    <button>{{ lieu.nom_lieu }}</button>
+                </a>
+                {% endfor %}
+            </div>
+        </div>        
+
+        {% if un_article.dateevenement_article %}
+        <p class="article__date"><b>Date de l'évènement : </b>{{ un_article.dateevenement_article|date("d/m/Y") }}</p>
+        {% endif %}
+        <div class="article-info">
+            <div class="article-info__texte">
+                <button class="accordeon bouton--valider">Afficher/cacher le texte</button>
+                <p style="max-height:0px; overflow:hidden;" id="texte_hidden" class="texte_statu">{{ un_article.texte_article }}</p>
+            </div>
+            <img id="on" class="article-info__img" src="{{un_article.image_article}}" alt="">
+        </div>
+
+    <div class="bloc-images">
+        <img id="on" class="article-info__img" src="{{un_article.image2_article}}" alt="">
+        <img id="on" class="article-info__img" src="{{un_article.image3_article}}" alt="">
+        <img id="on" class="article-info__img" src="{{un_article.image4_article}}" alt="">
+    </div>
+    
+    {% if un_article.special == "0" %}
+    <div class="footer-article">
+        <a href="index.php?page=article&action=delete&id={{un_article.id_article}}">
+            <button class="bouton bouton--delete">Supprimer l'article</button>
+        </a>
+        <a href="index.php?page=article&action=edit&id={{un_article.id_article}}">
+            <button class="bouton bouton--valider">Modifier l'article</button>
+        </a>
+    </div>
+    {% endif %}
+    {% if un_article.special == "1" %}
+    <div class="footer-article">
+        <p class="quote">*Cet article possède des conditions qui ne lui permet pas d'être modifié ou supprimé.*</p>
+    </div>
+    {% endif %}
+</div>
+
+{% endblock %}

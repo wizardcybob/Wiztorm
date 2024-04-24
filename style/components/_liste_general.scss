@@ -1,0 +1,45 @@
+/*LISTE GENERAL (CATEGORIE & LIEU)*/
+.bloc_general {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.bloc_general_unique {
+    height: 20rem;
+    width: 30%;
+    margin: 20px 0;
+    border-radius: 20px;
+
+    background-color: #131E2F;
+    overflow: hidden;
+}
+
+.bloc_general_unique__img {
+    height: 20rem;
+    width: 100%;
+    transition: all 0.5s ease-out;
+}
+
+.bloc_general_unique__titre {
+    color: white;
+    font-size: 1.5rem;
+    text-align: center;
+
+    transform: translateY(-4rem);
+    transition: all 0.3s ease-out;
+}
+
+.bloc_general_unique:hover{
+    box-shadow: 3px 3px 5px $violet;
+}
+
+.bloc_general_unique:hover .bloc_general_unique__titre {
+    padding: 1.1rem 0;
+    background-image: linear-gradient(75deg, #36096d 0%, #377cd6 74%);
+}
+
+.titre-liste-article {
+    margin-top: 2.5rem;
+    margin-bottom: -2rem;
+}
