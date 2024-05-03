@@ -22,6 +22,7 @@
 
         <div class="article__btns">
             <div>
+                <p>Catégorie(s) :</p>
                 {% for categorie in un_article.liste_categories %}
                 <a href="index.php?page=categorie&action=read&id={{categorie.id_categorie}}">
                     <button class="nom_cat">{{ categorie.nom_categorie }}</button>
@@ -29,6 +30,7 @@
                 {% endfor %}
             </div>
             <div>
+                <p>Lieu(x) :</p>
                 {% for lieu in un_article.liste_lieux %}
                 <a href="index.php?page=lieu&action=read&id={{lieu.id_lieu}}">
                     <button>{{ lieu.nom_lieu }}</button>
@@ -45,7 +47,9 @@
                 <button class="accordeon bouton--valider">Afficher/cacher le texte</button>
                 <p style="max-height:0px; overflow:hidden;" id="texte_hidden" class="texte_statu">{{ un_article.texte_article }}</p>
             </div>
-            <img id="on" class="article-info__img" src="{{un_article.image_article}}" alt="">
+            <div>
+                <img id="on" class="article-info__img" src="{{un_article.image_article}}" alt="">
+            </div>
         </div>
 
     <div class="bloc-images">

@@ -34,7 +34,7 @@ a {
 
 .quote {
   font-size: 0.85rem;
-  margin-top: 0.7rem;
+  margin: 0.7rem 0;
   font-style: italic;
 }
 
@@ -377,6 +377,10 @@ footer {
           justify-content: space-between;
 }
 
+.article__btns button {
+  margin: 0.5rem 0;
+}
+
 .article__date {
   margin: 1rem 0;
 }
@@ -473,8 +477,7 @@ footer {
           flex-direction: column;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  -webkit-box-shadow: 0px 0px 20px #5B4EFF;
-          box-shadow: 0px 0px 20px #5B4EFF;
+  background-color: #202051;
   padding: 1rem;
   border-radius: 20px;
 }
@@ -499,7 +502,7 @@ label {
 
 input, select {
   padding: 0.5rem 1rem;
-  border-radius: 20px;
+  border-radius: 6px;
 }
 
 .case_form {

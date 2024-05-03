@@ -142,7 +142,7 @@ function tri_alphabetique_AZ() {
     item_tri.classList.add("item");
     item_tri.classList.add("tri_alpha_AZ");
     item_tri.innerText = "Tri alphabétique (A-Z)";
-    item_tri.style.cssText = 'padding: 5px 15px; background: maroon; border-radius: 5px; color: white; margin: 0.5rem; width: 25%;';
+    item_tri.style.cssText = 'padding: 5px 15px; background: maroon; border-radius: 5px; color: white; margin: 0.5rem; width: 25%; cursor:pointer;';
     select_zone.appendChild(item_tri);
 
     item_tri.addEventListener('click', function() {
